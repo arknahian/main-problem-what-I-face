@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <h1>This is event What we are learning</h1>
+    <button onclick="eventHandler()">Click Me</button>
+    <button onmousemove="mouseMove()">Hover me</button>
+ <br>
+ <br>
+    <button id="my-btn">Click Me _1</button>
+    
+    <button id="second-btn">Click Me _2</button>
+    
+    <button>Click Me _3</button><button>Click Me _4</button>
+
+    <script>
+        function eventHandler() {
+            console.log("Someone clicked me")
+        }
+        function mouseMove() {
+            console.log("Someone hover one me ")
+        }
+
+        var myBtn = document.getElementById("my-btn");
+        myBtn.onclick = function() {
+            handleClick();
+        }
+        function handleClick() {
+            document.body.style.backgroundColor = "red";
+        }
+
+        var secondBtn = document.getElementById("second-btn");
+        secondBtn.addEventListener("click", handleClick);
+    </script>
+</body>
+</html>

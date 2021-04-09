@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVent Bubble</title>
+</head>
+<body>
+    <h1>My List</h1>
+    <div id="container">
+        <ul id="my-list">
+            <li id="first-item" class="item">my item -1</li>
+            <li class="item">my item -2</li>
+            <li class="item">my item -3</li>
+            <li class="item">my item -4</li>
+            <li class="item">my item -5</li>
+            <li class="item">my item -6</li>
+            <li class="item">my item -7</li>
+        </ul>
+        <button id="add-new">Add New Button</button>
+        <script>
+        //    var item = document.getElementsByClassName("item");
+        //    for (let i = 0; i < item.length; i++) {
+        //        const element = item[i];
+        //        element.addEventListener("click", function(event) {
+        //             event.target.parentNode.removeChild(this);
+        //        })
+        //    }
+           var addNew = document.getElementById("add-new");
+           addNew.addEventListener("click", function(event){
+               var myList = document.getElementById("my-list");
+               var newItem = document.createElement("li");
+               newItem.innerText = "This is brand new Item";
+               myList.appendChild(newItem);
+           })
+
+           var myList = document.getElementById("my-list");
+           myList.addEventListener("click", function(event){
+               event.target.parentNode.removeChild(event.target);
+           })
+        </script>
+    </div>
+</body>
+</html>

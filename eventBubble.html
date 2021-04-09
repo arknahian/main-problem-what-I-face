@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble</title>
+</head>
+<body>
+    <div id="container">
+        <h1>My List</h1>
+        <ul id="my-list">
+            <li id="list-one" class="list">list -1</li>
+            <li class="list">list -2</li>
+            <li class="list">list -3</li>
+            <li class="list">list -4</li>
+            <li class="list"> list -5</li>
+        </ul>
+        <button id=add-new>Add New Item</button>
+    </div>
+    <script>
+
+        // var items = document.getElementsByClassName("list");
+        // for (let i = 0; i < items.length; i++) {
+        //     const element = items[i];
+        //     element.addEventListener("click", function(event){
+        //         console.log(this.innerText, event.target.innerText);
+        //         console.log(event.target.parentNode)
+        //         console.log(this, event.target)
+        //         event.target.parentNode.removeChild(this);
+        //     })
+        // }
+
+        var addNew = document.getElementById("add-new")
+        addNew.addEventListener("click", function(){
+            var myList = document.getElementById("my-list");
+            var newItem = document.createElement("li");
+            newItem.innerText = "This is New One";
+            myList.appendChild(newItem);
+
+        })
+
+
+        var myList = document.getElementById("my-list");
+        myList.addEventListener("click", function(event){
+            console.log(this, event.target );
+            event.target.parentNode.removeChild(event.target);
+        })
+
+        // var listOne = document.getElementById("list-one");
+        // listOne.addEventListener("click", function() {
+        //     console.log("first one clicked");
+        // })
+
+        // var container = document.getElementById("container");
+        // container.addEventListener("click", function(){
+        //     console.log("Container Clicked");
+        // })
+
+     
+    </script>
+</body>
+</html>

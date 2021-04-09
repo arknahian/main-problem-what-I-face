@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append child</title>
+</head>
+<body>
+    <ul id="my-list">
+        <li>this is lis-1</li>
+        <li>this is lis-2</li>
+        <li>this is lis-3</li>
+        <li>this is lis-4</li>
+        <li>this is lis-5</li>
+        <li>this is lis-6</li>
+        <li>this is lis-7</li>
+        <li>this is lis-8</li>
+    </ul>
+    <div class="another-one">
+        <h1>This is heading</h1>
+        <h1>This is a heading</h1>
+        <h1>This is a heading 1</h1>
+        <h1>This is a heading 2</h1>
+        <h1>This is a heading 3</h1>
+        <h1>This is a heading 4</h1>
+        <h1>This is a heading 5</h1>
+    </div>
+    <div class="example-one">
+        <h1 class="make-red">This is -1</h1>
+        <h1>This is -2</h1>
+        <h1 class="make-red">This is -3</h1>
+        <h1>This is -4</h1>
+    </div>
+    <div class="app">
+        <h2>This is a heading 2 (1)</h2>
+        <h2>This is a heading 2 (2)</h2>
+        <h2>This is a heading 2 (3)</h2>
+        <h2>This is a heading 2 (4)</h2>
+        <h2>This is a heading 2 (5)</h2>
+        <h2>This is a heading 2 (6)</h2>
+    </div>
+    <script>
+        var myList = document.getElementById("my-list");
+        var newElement = document.createElement("li");
+        newElement.innerHTML = "This is added by JavaScript";
+        myList.appendChild(newElement);
+
+        var anotherOne = document.querySelectorAll("h1");
+        for (let i = 0; i < anotherOne.length; i++) {
+            const element = anotherOne[i];
+            element.style.color = "maroon";
+        }
+
+        var makeRed = document.getElementsByClassName("make-red");
+        for (let i = 0; i < makeRed.length; i++) {
+            const element = makeRed[i];
+            element.style.backgroundColor = "red";
+        }
+
+        var addBtn = document.querySelectorAll("h2");
+        for (let i = 0; i < addBtn.length; i++) {
+            const element = addBtn[i];
+            var newElements = document.createElement("button");
+            newElements.innerHTML = "Click Me (js)";
+            element.appendChild(newElements);
+        }
+    </script>
+</body>
+</html>
